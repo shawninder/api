@@ -1,0 +1,6 @@
+{
+  "env": {
+    "YOUTUBE_KEY": "@youtube-key",
+    "ZEIT_API_TOKEN": "@zeit-api-token"
+  }
+}
