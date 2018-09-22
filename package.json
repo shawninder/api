@@ -21,6 +21,7 @@
   "dependencies": {
     "micro": "9.3.2",
     "node-fetch": "2.1.2",
+    "nodemailer": "^4.6.8",
     "qs": "6.5.2"
   },
   "devDependencies": {
