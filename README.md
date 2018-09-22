@@ -13,3 +13,4 @@ Provide credentials via the following environment variables
 - GMAIL_USER
 - GMAIL_PASS
 - GMAIL_ADDRESS
+- YOUTUBE_KEY

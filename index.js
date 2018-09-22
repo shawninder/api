@@ -49,7 +49,23 @@ module.exports = async (req, res) => {
     })
     res.setHeader('Access-Control-Allow-Origin', '*')
     response.body.pipe(res)
-  } else {
+  } else if (query.q) {
+    const href = `https://www.googleapis.com/youtube/v3/search?${qs.stringify({
+      maxResults: '25',
+      part: 'snippet',
+      q: query.q,
+      pageToken: query.pageToken,
+      type: '',
+      key: process.env.YOUTUBE_KEY,
+      // Get only embeddable results
+      format: 5
+    })}`
+    // console.log('href', href)
+    const data = await fetch(href)
+    // TODO use a specific origin here instead
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    data.body.pipe(res)
+  } else if (uri.pathname === '/deployments' && req.method === 'GET') {
     const response = await fetch('https://api.zeit.co/v2/now/deployments', {
       headers: {
         Authorization: `Bearer ${token}`
@@ -57,5 +73,8 @@ module.exports = async (req, res) => {
     })
     res.setHeader('Access-Control-Allow-Origin', '*')
     response.body.pipe(res)
+  } else {
+    res.statusCode = 400
+    res.end()
   }
 }
