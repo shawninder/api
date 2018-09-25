@@ -21,6 +21,7 @@
   "homepage": "https://github.com/shawninder/api#readme",
   "dependencies": {
     "micro": "9.3.2",
+    "micro-cors": "^0.1.0",
     "node-fetch": "2.1.2",
     "nodemailer": "^4.6.8",
     "qs": "6.5.2"

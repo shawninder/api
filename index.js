@@ -1,9 +1,11 @@
 const url = require('url')
 const { json, send } = require('micro')
+const microCors = require('micro-cors')
 const fetch = require('node-fetch')
 const qs = require('qs')
 const mailer = require('nodemailer')
 
+const cors = microCors({ allowMethods: ['PUT', 'POST'] })
 // console.log('process.env.GMAIL_USER', process.env.GMAIL_USER)
 // console.log('process.env.GMAIL_PASS', process.env.GMAIL_PASS)
 
@@ -15,7 +17,7 @@ const smtpTransport = mailer.createTransport({
   }
 })
 
-module.exports = async (req, res) => {
+const handler = async (req, res) => {
   const uri = url.parse(req.url)
   // console.log('uri', uri)
   const query = qs.parse(uri.query)
@@ -27,8 +29,8 @@ module.exports = async (req, res) => {
     const mail = {
       from: data.email || process.env.GMAIL_ADDRESS,
       to: process.env.GMAIL_ADDRESS,
-      subject: `FEEDBACK - ${data.type}`,
-      text: `from: ${data.email}\n${data.body}`
+      subject: `FEEDBACK${data.email ? ` from: ${data.email}` : ''}`,
+      text: `${data.body}`
     }
     smtpTransport.sendMail(mail, (err, response) => {
       if (err) {
@@ -78,3 +80,5 @@ module.exports = async (req, res) => {
     res.end()
   }
 }
+
+module.exports = cors(handler)
