@@ -42,7 +42,7 @@ const handler = async (req, res) => {
       }
       smtpTransport.close()
     })
-  } else if (query.delete) {
+  } /*else if (query.delete) {
     const response = await fetch(`https://api.zeit.co/v2/now/deployments/${query.delete}`, {
       method: 'DELETE',
       headers: {
@@ -51,7 +51,7 @@ const handler = async (req, res) => {
     })
     res.setHeader('Access-Control-Allow-Origin', '*')
     response.body.pipe(res)
-  } else if (query.q) {
+  } */else if (query.q) {
     const href = `https://www.googleapis.com/youtube/v3/search?${qs.stringify({
       maxResults: '25',
       part: 'snippet',
