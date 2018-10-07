@@ -7,13 +7,6 @@
     "GMAIL_ADDRESS": "@gmail-address",
     "GMAIL_APP_PASS": "@gmail-app-pass",
     "ADMIN_USERNAME": "@admin-username",
-    "ADMIN_PASSWORD": "@admin-password",
-    "MONGO_ADMIN_USER": "@mongo_admin_user",
-    "MONGO_ADMIN_PASS": "@mongo_admin_pass",
-    "MONGO_USER": "@mongo_user",
-    "MONGO_PASS": "@mongo_pass",
-    "MONGO_HOSTS": "@mongo_hosts",
-    "MONGO_DATABASE": "@mongo_database",
-    "MONGO_REPLICA_SET": "@mongo_replicaset"
+    "ADMIN_PASSWORD": "@admin-password"
   }
 }
