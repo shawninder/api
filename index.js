@@ -12,6 +12,7 @@ const cors = microCors({ allowMethods: ['GET', 'PUT', 'POST', 'DELETE'] })
 const adminUsername = process.env.ADMIN_USERNAME
 const adminPassword = process.env.ADMIN_PASSWORD
 
+// TODO Incorporate in a larger Authentication and Authorization scheme involving all users
 const adminOnly = (wrapped) => {
   return (req, res) => {
     const auth = req.headers.authorization

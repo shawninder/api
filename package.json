@@ -4,7 +4,6 @@
   "description": "API for gaining cloud privileges",
   "main": "index.js",
   "scripts": {
-    "db": "node ./bin/localMongoDBAtlas.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "micro-dev -p 3002",
     "start": "micro",
