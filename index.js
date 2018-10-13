@@ -6,6 +6,7 @@ const postFeedback = require('./postFeedback')
 const getDeployments = require('./getDeployments')
 const deleteDeployment = require('./deleteDeployment')
 const getMedia = require('./getMedia')
+const getLogs = require('./getLogs')
 
 const cors = microCors({ allowMethods: ['GET', 'PUT', 'POST', 'DELETE'] })
 
@@ -29,7 +30,8 @@ const handler = router(
   post('/feedback', postFeedback),
   get('/deployments', getDeployments),
   del('/deployments/:uid', adminOnly(deleteDeployment)),
-  get('/media', getMedia)
+  get('/media', getMedia),
+  get('/logs', getLogs)
 )
 
 module.exports = cors(handler)
