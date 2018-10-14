@@ -7,6 +7,12 @@
     "GMAIL_ADDRESS": "@gmail-address",
     "GMAIL_APP_PASS": "@gmail-app-pass",
     "ADMIN_USERNAME": "@admin-username",
-    "ADMIN_PASSWORD": "@admin-password"
+    "ADMIN_PASSWORD": "@admin-password",
+    "ATLAS_HUB_USERNAME": "@atlas-hub-username",
+    "ATLAS_HUB_PASSWORD": "@atlas-hub-password",
+    "ATLAS_CLUSTER": "@atlas-cluster",
+    "ATLAS_HOSTS": "@atlas-hosts",
+    "ATLAS_DATABASE": "@atlas-database",
+    "ATLAS_REPLICA_SET": "@atlas-replica-set"
   }
 }
