@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
     })
     data.use(({ db }) => {
       const body = []
-      db.collection('events').find().limit(10)
+      db.collection('events').find().sort({ _id: -1 }).limit(10)
         .on('error', (err) => {
           sendError(req, res, createError(500, 'Error getting results', err))
         })
