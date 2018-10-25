@@ -31,7 +31,7 @@ const handler = router(
   get('/deployments', getDeployments),
   del('/deployments/:uid', adminOnly(deleteDeployment)),
   get('/media', getMedia),
-  get('/logs', getLogs)
+  get('/logs', adminOnly(getLogs)) // TODO Open this up to the public
 )
 
 module.exports = cors(handler)

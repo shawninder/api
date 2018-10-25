@@ -39,16 +39,20 @@ module.exports = async (req, res) => {
     })
     data.use(({ db }) => {
       const body = []
-      db.collection('events').find().sort({ _id: -1 }).limit(10)
-        .on('error', (err) => {
-          sendError(req, res, createError(500, 'Error getting results', err))
-        })
-        .on('data', (doc) => {
-          body.push(doc)
-        })
-        .on('end', () => {
-          send(res, 200, JSON.stringify(body))
-        })
+      try {
+        db.collection('events').find(JSON.parse(req.query.q)).sort({ _id: -1 }).limit(10)
+          .on('error', (err) => {
+            sendError(req, res, createError(500, 'Error getting results', err))
+          })
+          .on('data', (doc) => {
+            body.push(doc)
+          })
+          .on('end', () => {
+            send(res, 200, JSON.stringify(body))
+          })
+      } catch (ex) {
+        sendError(req, res, createError(400, 'Error parsing query', ex))
+      }
     })
   })
 }
