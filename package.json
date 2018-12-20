@@ -1,6 +1,6 @@
 {
   "name": "api",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "API for gaining cloud privileges",
   "main": "index.js",
   "scripts": {
