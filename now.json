@@ -1,5 +1,7 @@
 {
+  "version": 1,
   "env": {
+    "NODE_ENV": "production",
     "YOUTUBE_KEY": "@youtube-key",
     "ZEIT_API_TOKEN": "@zeit-api-token",
     "GMAIL_USER": "@gmail-user",
