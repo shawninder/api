@@ -7,6 +7,7 @@ const getDeployments = require('./getDeployments')
 const deleteDeployment = require('./deleteDeployment')
 const getMedia = require('./getMedia')
 const getLogs = require('./getLogs')
+const getAggs = require('./aggLogs')
 
 const cors = microCors({ allowMethods: ['GET', 'PUT', 'POST', 'DELETE'] })
 
@@ -31,7 +32,8 @@ const handler = router(
   get('/deployments', getDeployments),
   del('/deployments/:uid', adminOnly(deleteDeployment)),
   get('/media', getMedia),
-  get('/logs', adminOnly(getLogs)) // TODO Open this up to the public
+  get('/logs', adminOnly(getLogs)), // TODO Open this up to the public
+  get('/aggs', adminOnly(getAggs)) // TODO Open this up to the public
 )
 
 module.exports = cors(handler)
