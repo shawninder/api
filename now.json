@@ -3,6 +3,8 @@
   "env": {
     "NODE_ENV": "production",
     "YOUTUBE_KEY": "@youtube-key",
+    "SPOTIFY_CLIENT_ID": "@spotify-client-id",
+    "SPOTIFY_CLIENT_SECRET": "@spotify-client-secret",
     "ZEIT_API_TOKEN": "@zeit-api-token",
     "GMAIL_USER": "@gmail-user",
     "GMAIL_PASS": "@gmail-pass",
